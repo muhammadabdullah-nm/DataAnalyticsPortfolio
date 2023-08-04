@@ -33,52 +33,41 @@ from dbo.['2019$']
 
 
 --Looking at Happiness score vs Freedom
-Select Country, [Happiness Rank], [Happiness Score], Freedom, ROUND((Freedom/[Happiness Score])*100,2) as ScoreVsFreedom
-from dbo.['2015$']
+Select a.Country, ROUND((a.Freedom/a.[Happiness Score])*100,2) as fifteen, ROUND((b.Freedom/b.[Happiness Score])*100,2) as sixteen, ROUND((c.Freedom/c.[Happiness#Score])*100,2) as seventeen, ROUND((d.[Freedom to make life choices]/d.Score)*100,2) as eighteen, ROUND((e.[Freedom to make life choices]/e.[Score])*100,2) as ninteen
+from dbo.['2015$'] as a
+join dbo.['2016$'] as b
+on a.Country=b.Country
+join dbo.['2017$'] as c
+on a.Country=c.Country
+join dbo.['2018$'] as d
+on a.Country=d.[Country or region]
+join dbo.['2019$'] as e
+on a.Country=e.[Country or region]
 
-Select Country, [Happiness Rank], [Happiness Score], Freedom, ROUND((Freedom/[Happiness Score])*100,2) as ScoreVsFreedom
-from dbo.['2016$']
-
-Select Country, [Happiness#Rank], [Happiness#Score], Freedom, ROUND((Freedom/[Happiness#Score])*100,2) as ScoreVsFreedom
-from dbo.['2017$']
-
-Select [Country or region], [Overall rank], [Score], [Freedom to make life choices], ROUND(([Freedom to make life choices]/[Score])*100,2) as ScoreVsFreedom
-from dbo.['2018$']
-
-Select [Country or region], [Overall rank], [Score], [Freedom to make life choices], ROUND(([Freedom to make life choices]/[Score])*100,2) as ScoreVsFreedom
-from dbo.['2019$']
 
 --Looking at Score vs Trust
-Select Country, [Happiness Rank], [Happiness Score], [Trust (Government Corruption)], ROUND(([Trust (Government Corruption)]/[Happiness Score])*100,2) as ScoreVsCorruption
-from dbo.['2015$']
-
-Select Country, [Happiness Rank], [Happiness Score], [Trust (Government Corruption)], ROUND(([Trust (Government Corruption)]/[Happiness Score])*100,2) as ScoreVsCorruption
-from dbo.['2016$']
-
-Select Country, [Happiness#Rank], [Happiness#Score], [Trust##Government#Corruption#], ROUND(([Trust##Government#Corruption#]/[Happiness#Score])*100,2) as ScoreVsCorruption
-from dbo.['2017$']
-
-Select [Country or region], [Overall rank], [Score],  [Perceptions of corruption], ROUND(([Perceptions of corruption]/[Score])*100,2) as ScoreVsCorruption
-from dbo.['2018$']
-
-Select [Country or region], [Overall rank], [Score],  [Perceptions of corruption], ROUND(([Perceptions of corruption]/[Score])*100,2) as ScoreVsCorruption
-from dbo.['2019$']
+Select a.Country, ROUND((a.[Trust (Government Corruption)]/a.[Happiness Score])*100,2) as ScoreVsCorruption15, ROUND((b.[Trust (Government Corruption)]/b.[Happiness Score])*100,2) as ScoreVsCorruption16, ROUND((c.[Trust##Government#Corruption#]/c.[Happiness#Score])*100,2) as ScoreVsCorruption17, ROUND((d.[Perceptions of corruption]/d.[Score])*100,2) as ScoreVsCorruption18, ROUND((e.[Perceptions of corruption]/e.Score)*100,2) as ScoreVsCorruption19
+from dbo.['2015$'] as a
+join dbo.['2016$'] as b
+on a.Country=b.Country
+join dbo.['2017$'] as c
+on a.Country=c.Country
+join dbo.['2018$'] as d
+on a.Country=d.[Country or region]
+join dbo.['2019$'] as e
+on a.Country=e.[Country or region]
 
 --Looking at score vs GDP
-Select Country, [Happiness Rank], [Happiness Score], [Economy (GDP per Capita)], ROUND(([Economy (GDP per Capita)]/[Happiness Score])*100,2) as ScoreVsGDP
-from dbo.['2015$']
-
-Select Country, [Happiness Rank], [Happiness Score], [Economy (GDP per Capita)], ROUND(([Economy (GDP per Capita)]/[Happiness Score])*100,2) as ScoreVsGDP
-from dbo.['2016$']
-
-Select Country, [Happiness#Rank], [Happiness#Score], [Economy##GDP#per#Capita#], ROUND(([Economy##GDP#per#Capita#]/[Happiness#Score])*100,2) as ScoreVsGDP
-from dbo.['2017$']
-
-Select [Country or region], [Overall rank], [Score], [GDP per Capita], ROUND(([GDP per Capita]/[Score])*100,2) as ScoreVsGDP
-from dbo.['2018$']
-
-Select [Country or region], [Overall rank], [Score], [GDP per Capita], ROUND(([GDP per Capita]/[Score])*100,2) as ScoreVsGDP
-from dbo.['2019$']
+Select a.Country, ROUND((a.[Economy (GDP per Capita)]/a.[Happiness Score])*100,2) as ScoreVsGDP15, ROUND((b.[Economy (GDP per Capita)]/b.[Happiness Score])*100,2) as ScoreVsGDP16, ROUND((c.[Economy##GDP#per#Capita#]/c.[Happiness#Score])*100,2) as ScoreVsGDP17, ROUND((d.[GDP per capita]/d.[Score])*100,2) as ScoreVsGDP18, ROUND((e.[GDP per capita]/e.[Score])*100,2) as ScoreVsGDP19
+from dbo.['2015$'] as a
+join dbo.['2016$'] as b
+on a.Country=b.Country
+join dbo.['2017$'] as c
+on a.Country=c.Country
+join dbo.['2018$'] as d
+on a.Country=d.[Country or region]
+join dbo.['2019$'] as e
+on a.Country=e.[Country or region]
 
 
 --LETS START JOINING AND LOOK AT THE INSIGHTS
